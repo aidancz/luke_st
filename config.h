@@ -5,10 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "monospace:size=15:antialias=true:autohint=true";
+static char *font = "monospace:size=15";
 static char *font2[] = {
-"Noto Sans CJK SC:pixelsize=18:antialias=true:autohint=true",
-"Twemoji:pixelsize=15:antialias=true:autohint=true"
+"monospace:size=15",
+"monospace:size=15"
 };
 static int borderpx = 2;
 
