@@ -299,16 +299,16 @@ static Shortcut shortcuts[] = {
 //	{ TERMMOD,              XK_J,           zoom,           {.f = -1} },
 //	{ TERMMOD,              XK_U,           zoom,           {.f = +2} },
 //	{ TERMMOD,              XK_D,           zoom,           {.f = -2} },
-	{ TERMMOD,              XK_a,           zoom,           {.f = +1} },
-	{ TERMMOD,              XK_x,           zoom,           {.f = -1} },
-	{ TERMMOD,              XK_e,           zoomreset,      {.f =  0} },
+	{ TERMMOD,              XK_m,           zoom,           {.f = +1} },
+	{ TERMMOD,              XK_l,           zoom,           {.f = -1} },
+//	{ TERMMOD,              XK_o,           zoomreset,      {.f =  0} },
 
 //	{ MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
 //	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
 //	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
-	{ TERMMOD,              XK_w,           externalpipe,   {.v = openurlcmd } },
-	{ TERMMOD,              XK_u,           externalpipe,   {.v = copyurlcmd } },
-	{ TERMMOD,              XK_o,           externalpipe,   {.v = copyoutput } },
+	{ TERMMOD,              XK_i,           externalpipe,   {.v = openurlcmd } },
+//	{ TERMMOD,              XK_u,           externalpipe,   {.v = copyurlcmd } },
+	{ TERMMOD,              XK_y,           externalpipe,   {.v = copyoutput } },
 };
 
 /*
