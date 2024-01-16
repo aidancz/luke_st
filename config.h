@@ -10,6 +10,12 @@ static char *font2[] = {
 "monospace:size=15",
 "monospace:size=15"
 };
+
+/* disable bold, italic and roman fonts globally */
+int disablebold   = 0;
+int disableitalic = 0;
+int disableroman  = 0;
+
 static int borderpx = 2;
 
 /*
@@ -49,7 +55,8 @@ int allowaltscreen = 1;
 
 /* allow certain non-interactive (insecure) window operations such as:
    setting the clipboard text */
-int allowwindowops = 0;
+int allowwindowops = 1;
+// https://www.reddit.com/r/suckless/comments/1715wey/does_st_support_osc_52/
 
 /*
  * draw latency range in ms - from new content/keypress/etc until drawing.
@@ -271,7 +278,11 @@ static Shortcut shortcuts[] = {
 
 { TERMMOD,      XK_Num_Lock,   numlock,       {.i =  0} },
 
+
+
 /* custom key: */
+
+
 
 { TERMMOD,      XK_C,          clipcopy,      {.i =  0} },
 { TERMMOD,      XK_V,          clippaste,     {.i =  0} },
@@ -287,28 +298,30 @@ static Shortcut shortcuts[] = {
 /* { MODKEY,    XK_Page_Down,  kscrolldown,   {.i = -1} },          */
 /* { ShiftMask, XK_Page_Up,    kscrollup,     {.i = -1} },          */
 /* { ShiftMask, XK_Page_Down,  kscrolldown,   {.i = -1} },          */
-{ TERMMOD,      XK_J,          kscrolldown,   {.i = -1} },
-{ TERMMOD,      XK_K,          kscrollup,     {.i = -1} },
+{ TERMMOD,      XK_J,          kscrolldown,   {.i = 1} },
+{ TERMMOD,      XK_K,          kscrollup,     {.i = 1} },
+{ TERMMOD,      XK_F,          kscrolldown,   {.i = -1} },
+{ TERMMOD,      XK_B,          kscrollup,     {.i = -1} },
 
 /* { MODKEY,    XK_s,          changealpha,   {.f = -0.05} },       */
 /* { MODKEY,    XK_a,          changealpha,   {.f = +0.05} },       */
 
-/* { TERMMOD,   XK_Up,         zoom,          {.f = +1} },          */
-/* { TERMMOD,   XK_Down,       zoom,          {.f = -1} },          */
-/* { TERMMOD,   XK_K,          zoom,          {.f = +1} },          */
-/* { TERMMOD,   XK_J,          zoom,          {.f = -1} },          */
-/* { TERMMOD,   XK_U,          zoom,          {.f = +2} },          */
-/* { TERMMOD,   XK_D,          zoom,          {.f = -2} },          */
-{ TERMMOD,      XK_D,          zoom,          {.f = +1} },
-{ TERMMOD,      XK_F,          zoom,          {.f = -1} },
-/* { TERMMOD,   XK_o,          zoomreset,     {.f =  0} },          */
+/* { TERMMOD, XK_Up,   zoom,      {.f = +1} }, */
+/* { TERMMOD, XK_Down, zoom,      {.f = -1} }, */
+/* { TERMMOD, XK_K,    zoom,      {.f = +1} }, */
+/* { TERMMOD, XK_J,    zoom,      {.f = -1} }, */
+/* { TERMMOD, XK_U,    zoom,      {.f = +2} }, */
+/* { TERMMOD, XK_D,    zoom,      {.f = -2} }, */
+/* { TERMMOD, XK_D,    zoom,      {.f = +1} }, */
+/* { TERMMOD, XK_F,    zoom,      {.f = -1} }, */
+/* { TERMMOD, XK_o,    zoomreset, {.f =  0} }, */
 
-/* { MODKEY,    XK_l,          externalpipe,  {.v = openurlcmd } }, */
-/* { MODKEY,    XK_y,          externalpipe,  {.v = copyurlcmd } }, */
-/* { MODKEY,    XK_o,          externalpipe,  {.v = copyoutput } }, */
-{ TERMMOD,      XK_colon,      externalpipe,  {.v = openurlcmd } },
-/* { TERMMOD,   XK_u,          externalpipe,  {.v = copyurlcmd } }, */
-{ TERMMOD,      XK_greater,    externalpipe,  {.v = copyoutput } },
+/* { MODKEY,  XK_l,       externalpipe, {.v = openurlcmd } }, */
+/* { MODKEY,  XK_y,       externalpipe, {.v = copyurlcmd } }, */
+/* { MODKEY,  XK_o,       externalpipe, {.v = copyoutput } }, */
+{ TERMMOD,    XK_O,       externalpipe, {.v = openurlcmd } },
+/* { TERMMOD, XK_u,       externalpipe, {.v = copyurlcmd } }, */
+{ TERMMOD,    XK_greater, externalpipe, {.v = copyoutput } },
 };
 
 /*
