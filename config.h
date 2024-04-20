@@ -251,8 +251,7 @@ static MouseShortcut mshortcuts[] = {
 
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod4Mask
-/* #define TERMMOD (Mod4Mask|ShiftMask) */
-#define TERMMOD Mod4Mask
+#define TERMMOD (Mod4Mask|Mod1Mask)
 
 static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -o", "externalpipe", NULL };
 static char *copyurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -c", "externalpipe", NULL };
@@ -320,9 +319,9 @@ static Shortcut shortcuts[] = {
 /* { MODKEY,  XK_l,       externalpipe, {.v = openurlcmd } }, */
 /* { MODKEY,  XK_y,       externalpipe, {.v = copyurlcmd } }, */
 /* { MODKEY,  XK_o,       externalpipe, {.v = copyoutput } }, */
-/* { TERMMOD, XK_o,       externalpipe, {.v = openurlcmd } }, */
-/* { TERMMOD, XK_u,       externalpipe, {.v = copyurlcmd } }, */
-{ TERMMOD, XK_x,       externalpipe, {.v = copyoutput } },
+{ TERMMOD, XK_s,       externalpipe, {.v = openurlcmd } },
+{ TERMMOD, XK_a,       externalpipe, {.v = copyurlcmd } },
+{ TERMMOD, XK_y,       externalpipe, {.v = copyoutput } },
 };
 
 /*
