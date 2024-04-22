@@ -284,6 +284,7 @@ static Shortcut shortcuts[] = {
 
 
 
+{ MODKEY,       XK_j,          newterm,       {.i =  0} },
 { TERMMOD,      XK_c,          clipcopy,      {.i =  0} },
 { TERMMOD,      XK_v,          clippaste,     {.i =  0} },
 /* { ShiftMask, XK_Insert,     clippaste,     {.i =  0} },          */
@@ -319,8 +320,8 @@ static Shortcut shortcuts[] = {
 /* { MODKEY,  XK_l,       externalpipe, {.v = openurlcmd } }, */
 /* { MODKEY,  XK_y,       externalpipe, {.v = copyurlcmd } }, */
 /* { MODKEY,  XK_o,       externalpipe, {.v = copyoutput } }, */
-{ TERMMOD, XK_s,       externalpipe, {.v = openurlcmd } },
 { TERMMOD, XK_a,       externalpipe, {.v = copyurlcmd } },
+{ TERMMOD, XK_s,       externalpipe, {.v = openurlcmd } },
 { TERMMOD, XK_y,       externalpipe, {.v = copyoutput } },
 };
 
