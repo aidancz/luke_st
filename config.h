@@ -284,7 +284,7 @@ static Shortcut shortcuts[] = {
 
 
 
-{ MODKEY,       XK_j,          newterm,       {.i =  0} },
+{ TERMMOD,      XK_n,          newterm,       {.i =  0} },
 { TERMMOD,      XK_c,          clipcopy,      {.i =  0} },
 { TERMMOD,      XK_v,          clippaste,     {.i =  0} },
 /* { ShiftMask, XK_Insert,     clippaste,     {.i =  0} },          */
