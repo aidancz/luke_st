@@ -268,7 +268,7 @@ static Shortcut shortcuts[] = {
 
 { TERMMOD,      XK_A,          zoom,          {.f = +1} },
 { TERMMOD,      XK_X,          zoom,          {.f = -1} },
-/* { TERMMOD,      XK_,           zoomreset,     {.f =  0} }, */
+{ TERMMOD,      XK_parenright, zoomreset,     {.f =  0} },
 /* keysymdef.h: XK_Prior = XK_Page_Up; XK_Next = XK_Page_Down */
 
 /* { TERMMOD,   XK_C,          clipcopy,      {.i =  0} },          */
