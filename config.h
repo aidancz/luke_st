@@ -251,8 +251,8 @@ static MouseShortcut mshortcuts[] = {
 
 /* Internal keyboard shortcuts. */
 /* #define MODKEY Mod4Mask */
-/* #define TERMMOD (Mod4Mask|Mod1Mask) */
-#define TERMMOD (ControlMask|ShiftMask)
+#define TERMMOD (Mod4Mask|Mod1Mask)
+/* #define TERMMOD (ControlMask|ShiftMask) */
 
 static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -o", "externalpipe", NULL };
 static char *copyurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -c", "externalpipe", NULL };
@@ -266,9 +266,9 @@ static Shortcut shortcuts[] = {
 /* { ShiftMask,    XK_Print,      printscreen,   {.i =  0} }, */
 /* { XK_ANY_MOD,   XK_Print,      printsel,      {.i =  0} }, */
 
-{ TERMMOD,      XK_A,          zoom,          {.f = +1} },
-{ TERMMOD,      XK_X,          zoom,          {.f = -1} },
-{ TERMMOD,      XK_parenright, zoomreset,     {.f =  0} },
+{ TERMMOD,      XK_minus,      zoom,          {.f = -1} },
+{ TERMMOD,      XK_equal,      zoom,          {.f = +1} },
+{ TERMMOD,      XK_0,          zoomreset,     {.f =  0} },
 /* keysymdef.h: XK_Prior = XK_Page_Up; XK_Next = XK_Page_Down */
 
 /* { TERMMOD,   XK_C,          clipcopy,      {.i =  0} },          */
@@ -285,9 +285,9 @@ static Shortcut shortcuts[] = {
 
 
 
-{ TERMMOD,      XK_exclam,     newterm,       {.i =  0} },
-{ TERMMOD,      XK_C,          clipcopy,      {.i =  0} },
-{ TERMMOD,      XK_V,          clippaste,     {.i =  0} },
+{ TERMMOD,      XK_F1,         newterm,       {.i =  0} },
+{ TERMMOD,      XK_c,          clipcopy,      {.i =  0} },
+{ TERMMOD,      XK_v,          clippaste,     {.i =  0} },
 /* { ShiftMask, XK_Insert,     clippaste,     {.i =  0} },          */
 
 /* { MODKEY,    XK_k,          kscrollup,     {.i =  1} },          */
@@ -300,10 +300,12 @@ static Shortcut shortcuts[] = {
 /* { MODKEY,    XK_Page_Down,  kscrolldown,   {.i = -1} },          */
 /* { ShiftMask, XK_Page_Up,    kscrollup,     {.i = -1} },          */
 /* { ShiftMask, XK_Page_Down,  kscrolldown,   {.i = -1} },          */
-{ TERMMOD,      XK_J,          kscrolldown,   {.i = 1} },
-{ TERMMOD,      XK_K,          kscrollup,     {.i = 1} },
-{ TERMMOD,      XK_F,          kscrolldown,   {.i = -1} },
-{ TERMMOD,      XK_B,          kscrollup,     {.i = -1} },
+// { TERMMOD,      XK_j,          kscrolldown,   {.i = 1} },
+// { TERMMOD,      XK_k,          kscrollup,     {.i = 1} },
+// { TERMMOD,      XK_e,          kscrolldown,   {.i = 1} },
+// { TERMMOD,      XK_y,          kscrollup,     {.i = 1} },
+{ TERMMOD,      XK_f,          kscrolldown,   {.i = -1} },
+{ TERMMOD,      XK_b,          kscrollup,     {.i = -1} },
 
 /* { MODKEY,    XK_s,          changealpha,   {.f = -0.05} },       */
 /* { MODKEY,    XK_a,          changealpha,   {.f = +0.05} },       */
@@ -321,8 +323,8 @@ static Shortcut shortcuts[] = {
 /* { MODKEY,  XK_l,       externalpipe, {.v = openurlcmd } }, */
 /* { MODKEY,  XK_y,       externalpipe, {.v = copyurlcmd } }, */
 /* { MODKEY,  XK_o,       externalpipe, {.v = copyoutput } }, */
-{ TERMMOD, XK_U,       externalpipe, {.v = copyurlcmd } },
-{ TERMMOD, XK_O,       externalpipe, {.v = copyoutput } },
+{ TERMMOD, XK_F2,      externalpipe, {.v = copyoutput } },
+{ TERMMOD, XK_F3,      externalpipe, {.v = copyurlcmd } },
 };
 
 /*
