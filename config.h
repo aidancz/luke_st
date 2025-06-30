@@ -250,8 +250,10 @@ static MouseShortcut mshortcuts[] = {
 };
 
 /* Internal keyboard shortcuts. */
+/* https://dwm.suckless.org/customisation/windows_key/ */
+
 /* #define MODKEY Mod4Mask */
-#define TERMMOD (Mod4Mask|Mod1Mask)
+#define TERMMOD (Mod4Mask|ControlMask)
 /* #define TERMMOD (ControlMask|ShiftMask) */
 
 static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -o", "externalpipe", NULL };
@@ -304,8 +306,8 @@ static Shortcut shortcuts[] = {
 // { TERMMOD,      XK_k,          kscrollup,     {.i = 1} },
 // { TERMMOD,      XK_e,          kscrolldown,   {.i = 1} },
 // { TERMMOD,      XK_y,          kscrollup,     {.i = 1} },
-{ TERMMOD,      XK_f,          kscrolldown,   {.i = -1} },
-{ TERMMOD,      XK_b,          kscrollup,     {.i = -1} },
+{ ControlMask, XK_Page_Down, kscrolldown, {.i = -1} },
+{ ControlMask, XK_Page_Up,   kscrollup,   {.i = -1} },
 
 /* { MODKEY,    XK_s,          changealpha,   {.f = -0.05} },       */
 /* { MODKEY,    XK_a,          changealpha,   {.f = +0.05} },       */
