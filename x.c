@@ -1667,9 +1667,16 @@ xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len, int x, i
 		}
 
         /* Render underline and strikethrough. */
+        /* https://www.reddit.com/r/suckless/comments/1as1n7j/st_underscore_and_underline_overlapping/ */
         if (base.mode & ATTR_UNDERLINE) {
-            XftDrawRect(xw.draw, fg, winx, winy + dc.font.ascent + 1,
-                        width, 1);
+            XftDrawRect(
+            	xw.draw,
+            	fg,
+            	winx,
+            	winy + dc.font.ascent + 5,
+            	width,
+            	1
+            );
         }
 
         if (base.mode & ATTR_STRUCK) {
