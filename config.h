@@ -509,6 +509,7 @@ static Key key[] = {
         { XK_Home,          ControlMask,    "\033[1;5H",     0,    0},
         { XK_Home,          ShiftMask,      "\033[2J",       0,   -1},
         { XK_Home,          ShiftMask,      "\033[1;2H",     0,   +1},
+        { XK_End,           ControlMask,    "\033[1;5F",     0,    0},
         { XK_End,           ControlMask,    "\033[J",       -1,    0},
         { XK_End,           ControlMask,    "\033[1;5F",    +1,    0},
         { XK_End,           ShiftMask,      "\033[K",       -1,    0},
